@@ -2,7 +2,7 @@
 
 Name:           pywebkitgtk
 Version:        1.1.6
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Python Bindings for WebKit-gtk
 
 Group:          Development/Languages
@@ -48,6 +48,10 @@ rm -rf $RPM_BUILD_ROOT
 %{python_sitearch}/webkit-1.0.pth
 
 %changelog
+* Fri Jun 20 2014 Tomas Popela <tpopela@redhat.com> - 1.1.6-4
+- Rebuild against new webkitgtk
+- Resolves: rhbz#1101400
+
 * Thu Jul  1 2010 Colin Walters <walters@redhat.com> - 1.1.6-3
 - Fix license; it's really LGPL
 - Resolves: #610238
