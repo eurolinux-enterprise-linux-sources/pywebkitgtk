@@ -1,0 +1,93 @@
+;; -*- scheme -*-
+;; PyWebKitGtk - Python bindings to WebKit/GTK+
+;;
+;; Copyright (C) 2009  Jan Michael Alonzo <jmalonzo@gmail.com>
+;; 
+;; This library is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU Library General Public
+;; License as published by the Free Software Foundation; either
+;; version 2 of the License, or (at your option) any later version.
+;; 
+;; This library is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; Library General Public License for more details.
+;; 
+;; You should have received a copy of the GNU Library General Public
+;; License along with this library; if not, write to the Free Software
+;; Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston MA  02110-1301 USA
+;;
+
+; object definitions ...
+(define-object WebInspector
+  (in-module "WebKit")
+  (parent "GObject")
+  (c-name "WebKitWebInspector")
+  (gtype-id "WEBKIT_TYPE_WEB_INSPECTOR")
+)
+
+(define-object WindowFeatures
+  (in-module "WebKit")
+  (parent "GObject")
+  (c-name "WebKitWebWindowFeatures")
+  (gtype-id "WEBKIT_TYPE_WEB_WINDOW_FEATURES")
+)
+
+(define-object WebNavigationAction
+  (in-module "WebKit")
+  (parent "GObject")
+  (c-name "WebKitWebNavigationAction")
+  (gtype-id "WEBKIT_TYPE_WEB_NAVIGATION_ACTION")
+)
+
+(define-object WebPolicyDecision
+  (in-module "WebKit")
+  (parent "GObject")
+  (c-name "WebKitWebPolicyDecision")
+  (gtype-id "WEBKIT_TYPE_WEB_POLICY_DECISION")
+)
+
+(define-object Download
+  (in-module "WebKit")
+  (parent "GObject")
+  (c-name "WebKitDownload")
+  (gtype-id "WEBKIT_TYPE_DOWNLOAD")
+)
+
+(enum DownloadStatus
+  (in-module "WebKit")
+  (c-name "WebKitDownloadStatus")
+  (gtype-id "WEBKIT_TYPE_DOWNLOAD_STATUS")
+  (values
+   '("error" "WEBKIT_DOWNLOAD_STATUS_ERROR")
+   '("created" "WEBKIT_DOWNLOAD_STATUS_CREATED")
+   '("started" "WEBKIT_DOWNLOAD_STATUS_STARTED")
+   '("cancelled" "WEBKIT_DOWNLOAD_STATUS_CANCELLED")
+   '("finished" "WEBKIT_DOWNLOAD_STATUS_FINISHED")
+   )
+)
+
+(enum DownloadError
+  (in-module "WebKit")
+  (c-name "WebKitDownloadError")
+  (gtype-id "WEBKIT_TYPE_DOWNLOAD_ERROR")
+  (values
+   '("cancelled-by-user" "WEBKIT_DOWNLOAD_ERROR_CANCELLED_BY_USER")
+   '("destination" "WEBKIT_DOWNLOAD_ERROR_DESTINATION")
+   '("network" "WEBKIT_DOWNLOAD_ERROR_NETWORK")
+   )
+)
+
+(enum WebNavigationReason
+  (in-module "WebKit")
+  (c-name "WebKitWebNavigationReason")
+  (gtype-id "WEBKIT_TYPE_WEB_NAVIGATION_REASON")
+  (values
+   '("link-clicked" "WEBKIT_WEB_NAVIGATION_REASON_LINK_CLICKED")
+   '("form-submitted" "WEBKIT_WEB_NAVIGATION_REASON_FORM_SUBMITTED")
+   '("back-forward" "WEBKIT_WEB_NAVIGATION_REASON_BACK_FORWARD")
+   '("reload" "WEBKIT_WEB_NAVIGATION_REASON_RELOAD")
+   '("form-resubmitted" "WEBKIT_WEB_NAVIGATION_REASON_FORM_RESUBMITTED")
+   '("other" "WEBKIT_WEB_NAVIGATION_REASON_OTHER")
+   )
+)
